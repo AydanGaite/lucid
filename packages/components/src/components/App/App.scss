@@ -1,0 +1,82 @@
+@use '../../styles/helpers/Emphasis.scss';
+
+.lucid-app {
+  font-family: var(--lucid-font-family);
+  height: 100%;
+  width: 100%;
+  
+  overflow: scroll;
+  display: block;
+
+  -webkit-touch-callout: none;
+
+  .lucid-app-content {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  .lucid-app-bottom-navigation {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    & > * {
+      padding-bottom: calc(env(safe-area-inset-bottom));
+    }
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 38px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  h6 {
+    font-weight: 800;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  .lucid-emphasis {
+    @include Emphasis.default;
+  }
+}
+
+.lucid-appearance-dark {
+  background-color: var(--lucid-surface-dark-primary);
+  color: var(--lucid-color-white);;
+}

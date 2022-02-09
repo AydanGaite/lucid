@@ -1,0 +1,134 @@
+@use '../../styles/helpers/Color.scss';
+@use '../../styles/helpers/Select.scss';
+@use '../../styles/helpers/Clamps.scss';
+
+.lucid-button {
+  @include Select.none;
+  @include Color.fill(color);
+
+  border: 0px;
+
+  border-radius: var(--lucid-border-radius);
+
+  text-decoration: none;
+
+  color: rgb(28, 28, 30);
+
+  display: flex;
+
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  transition: background-color 2s ease-out;
+
+  &.lucid-button-type-icon {
+    flex-direction: column;
+    & > * {
+      margin-right: 0;
+    }
+  }
+
+  &.lucid-button-size-small {
+    height: 16px;
+
+    &.lucid-button-type-pill {
+      width: 80px;
+      min-width: 80px;
+      padding: 5px 6px;
+    }
+
+    &.lucid-button-type-icon {
+      padding: 6px;
+      font-size: 16px;
+    }
+
+    &.lucid-button-rounded {
+      border-radius: 18px;
+    }
+  }
+
+  &.lucid-button-size-medium {
+    height: 19px;
+    line-height: 16px;
+
+    &.lucid-button-type-pill {
+      width: 100px;
+      min-width: 100px;
+      padding: 7px 12px;
+    }
+
+    &.lucid-button-type-icon {
+      padding: 4px 5px;
+      height: auto;
+
+      & > * {
+        &:first-child {
+          font-size: 23px;
+          margin-top: 1px;
+          margin-bottom: 1px;
+        }
+      }
+
+      font-size: 10px;
+    }
+
+    &.lucid-button-rounded {
+      border-radius: 20px;
+    }
+  }
+
+  &.lucid-button-solid {
+    background-color: rgb(242, 242, 247);
+  }
+
+  &.lucid-button-fill {
+    @include Color.fill(background-color);
+    @include Color.add(background-color, blue);
+    color: white;
+  }
+
+  &.lucid-button-tint {
+    @include Color.tint(background-color);
+    @include Color.fill(color);
+  }
+
+  &.lucid-button-condensed {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & > * {
+    margin-right: 6px;
+  }
+
+  & > *:only-child {
+    margin-right: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid black;
+  }
+}
+
+.lucid-appearance-dark {
+  .lucid-button {
+    &.lucid-button-solid {
+      color: white;
+      @include Color.fill(color);
+      background-color: rgb(44, 44, 46);
+    }
+
+    &:focus-visible {
+      outline: 2px solid white;
+    }
+  }
+}
