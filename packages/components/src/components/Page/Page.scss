@@ -1,0 +1,28 @@
+.lucid-page {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  background-color: var(--lucid-surface-primary);
+  z-index: 1;
+
+  .lucid-page-content {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+.lucid-appearance-dark {
+  .lucid-page {
+    background-color: var(--lucid-surface-dark-primary);
+  }
+}

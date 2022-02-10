@@ -1,6 +1,8 @@
 @use '../../styles/helpers/Emphasis.scss';
+@use '../../styles/helpers/Select.scss';
 
 .lucid-app {
+  @include Select.none;
   font-family: var(--lucid-font-family);
   height: 100%;
   width: 100%;
@@ -18,6 +20,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+
+    z-index: 1;
 
     & > * {
       padding-bottom: calc(env(safe-area-inset-bottom));

@@ -1,9 +1,7 @@
 @use '../../styles/helpers/Color.scss';
-@use '../../styles/helpers/Select.scss';
 @use '../../styles/helpers/Clamps.scss';
 
 .lucid-button {
-  @include Select.none;
   @include Color.fill(color);
 
   border: 0px;
@@ -16,7 +14,6 @@
 
   display: flex;
 
-
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -27,7 +24,7 @@
 
   background-color: transparent;
 
-  transition: background-color 2s ease-out;
+  transition: background-color 50ms ease-out;
 
   &.lucid-button-type-icon {
     flex-direction: column;
@@ -43,6 +40,7 @@
       width: 80px;
       min-width: 80px;
       padding: 5px 6px;
+      font-size: 12px;
     }
 
     &.lucid-button-type-icon {
@@ -69,15 +67,18 @@
       padding: 4px 5px;
       height: auto;
 
-      & > * {
-        &:first-child {
-          font-size: 23px;
-          margin-top: 1px;
-          margin-bottom: 1px;
-        }
+      min-height: 25px;
+      min-width: 23px;
+
+      .lucid-button-media {
+        font-size: 21px;
+        margin-top: 1px;
+        margin-bottom: 1px;
       }
 
-      font-size: 10px;
+      .lucid-button-text {
+        font-size: 10px;
+      }
     }
 
     &.lucid-button-rounded {
@@ -89,13 +90,13 @@
     background-color: rgb(242, 242, 247);
   }
 
-  &.lucid-button-fill {
+  &.lucid-button-filled {
     @include Color.fill(background-color);
     @include Color.add(background-color, blue);
     color: white;
   }
 
-  &.lucid-button-tint {
+  &.lucid-button-tinted {
     @include Color.tint(background-color);
     @include Color.fill(color);
   }
@@ -112,6 +113,13 @@
 
   & > *:only-child {
     margin-right: 0;
+  }
+
+  .lucid-button-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   &:focus-visible {

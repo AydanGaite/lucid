@@ -16,6 +16,14 @@
     @include add($attr, blue);
   }
 
+  &[class~="lucid-color-purple"] {
+    @include add($attr, purple);
+  }
+
+  &[class~="lucid-color-lilac"] {
+    @include add($attr, lilac);
+  }
+
   &[class~="lucid-color-gray"] {
     @include add($attr, gray);
   }
@@ -32,6 +40,14 @@
 
   &[class~="lucid-color-blue"] {
     @include add($attr, tint-blue);
+  }
+
+  &[class~="lucid-color-purple"] {
+    @include add($attr, tint-purple);
+  }
+
+  &[class~="lucid-color-lilac"] {
+    @include add($attr, tint-lilac);
   }
 
   &[class~="lucid-color-gray"] {

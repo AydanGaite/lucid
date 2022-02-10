@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { Theme } from '../../styles';
-  import { options } from '../App/App.svelte';
-
   import './Tabbar.scss';
 
+  import { Theme } from '../../styles';
+  import { options } from '../App/App.svelte';
   export let blur = $options.theme === Theme.Tron;
   export let border = true;
 
